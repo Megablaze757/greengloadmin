@@ -55,126 +55,9 @@
             color: var(--dark-green);
         }
 
-        /* ===== Login Page ===== */
-        .login-container {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--gradient-primary);
-            padding: 2rem;
-        }
-
-        .login-box {
-            background: var(--white);
-            border-radius: var(--border-radius-lg);
-            box-shadow: var(--shadow-lg);
-            padding: 3rem;
-            width: 100%;
-            max-width: 450px;
-            text-align: center;
-        }
-
-        .login-logo {
-            margin-bottom: 2rem;
-        }
-
-        .login-logo img {
-            width: 80px;
-            height: 80px;
-            border-radius: 20px;
-            background: var(--gradient-primary);
-            padding: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .login-logo h1 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .login-logo p {
-            color: var(--medium-gray);
-            font-size: 0.95rem;
-        }
-
-        .login-form {
-            margin-top: 2rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--dark-gray);
-            font-size: 0.95rem;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid var(--light-gray);
-            border-radius: var(--border-radius);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .form-group input:focus {
-            outline: none;
-            border-color: var(--primary-green);
-            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
-        }
-
-        .login-btn {
-            width: 100%;
-            padding: 1rem;
-            background: var(--gradient-primary);
-            color: var(--white);
-            border: none;
-            border-radius: var(--border-radius);
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-
-        .login-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow);
-        }
-
-        .login-footer {
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--light-gray);
-            color: var(--medium-gray);
-            font-size: 0.875rem;
-        }
-
-        .login-footer a {
-            color: var(--primary-green);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .login-footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* ===== Admin Dashboard (Hidden Initially) ===== */
+        /* ===== Admin Dashboard ===== */
         .admin-container {
-            display: none;
+            display: block;
             min-height: 100vh;
         }
 
@@ -303,27 +186,6 @@
             font-size: 0.75rem;
             color: var(--light-green);
             opacity: 0.8;
-        }
-
-        .logout-btn {
-            width: 100%;
-            padding: 0.75rem;
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--white);
-            border: none;
-            border-radius: var(--border-radius);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-
-        .logout-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
         }
 
         /* ===== Main Content ===== */
@@ -845,10 +707,6 @@
         }
 
         @media (max-width: 768px) {
-            .login-box {
-                padding: 2rem;
-            }
-
             .admin-main {
                 padding: 1rem;
             }
@@ -878,14 +736,6 @@
         }
 
         @media (max-width: 480px) {
-            .login-container {
-                padding: 1rem;
-            }
-
-            .login-box {
-                padding: 1.5rem;
-            }
-
             .admin-actions {
                 flex-direction: column;
                 width: 100%;
@@ -903,42 +753,7 @@
     </style>
 </head>
 <body>
-    <!-- Login Screen -->
-    <div class="login-container" id="loginScreen">
-        <div class="login-box">
-            <div class="login-logo">
-                <div style="width: 80px; height: 80px; border-radius: 20px; background: var(--gradient-primary); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                    <i class="fas fa-spray-can-sparkles" style="font-size: 2rem; color: white;"></i>
-                </div>
-                <h1>GreenGlo Admin</h1>
-                <p>Cleaning Service Management System</p>
-            </div>
-            
-            <form id="loginForm" class="login-form">
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" placeholder="Enter admin username" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="Enter admin password" required>
-                </div>
-                
-                <button type="submit" class="login-btn">
-                    <i class="fas fa-sign-in-alt"></i>
-                    Login to Admin Panel
-                </button>
-            </form>
-            
-            <div class="login-footer">
-                <p>Default credentials: <strong>admin</strong> / <strong>admin123</strong></p>
-                <p>Return to <a href="index.html">Main Website</a></p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Admin Dashboard (Hidden Initially) -->
+    <!-- Admin Dashboard -->
     <div class="admin-container" id="adminDashboard">
         <!-- Sidebar -->
         <aside class="admin-sidebar">
@@ -1012,14 +827,10 @@
                 <div class="user-profile">
                     <div class="user-avatar" id="userInitial">A</div>
                     <div class="user-info">
-                        <h4 id="userName">Admin User</h4>
+                        <h4 id="userName">GreenGlo Admin</h4>
                         <span>Administrator</span>
                     </div>
                 </div>
-                <button class="logout-btn" id="logoutBtn">
-                    <i class="fas fa-sign-out-alt"></i>
-                    Logout
-                </button>
             </div>
         </aside>
 
@@ -1168,10 +979,7 @@
 
         // ===== DOM Elements =====
         const elements = {
-            loginScreen: document.getElementById('loginScreen'),
             adminDashboard: document.getElementById('adminDashboard'),
-            loginForm: document.getElementById('loginForm'),
-            logoutBtn: document.getElementById('logoutBtn'),
             mobileMenuToggle: document.getElementById('mobileMenuToggle'),
             sidebar: document.querySelector('.admin-sidebar'),
             navLinks: document.querySelectorAll('.nav-links a'),
@@ -1199,46 +1007,27 @@
         document.addEventListener('DOMContentLoaded', function() {
             console.log('Admin site initialized');
             
-            // Check if user is already logged in
-            checkAuth();
+            // Set current user (no login required)
+            currentUser = {
+                id: 1,
+                name: 'GreenGlo Admin',
+                email: 'admin@greenglo.com',
+                role: 'admin'
+            };
+            
+            // Update user info
+            document.getElementById('userName').textContent = currentUser.name;
+            document.getElementById('userInitial').textContent = currentUser.name.charAt(0).toUpperCase();
             
             // Set current date
             updateDate();
             
             // Setup event listeners
             setupEventListeners();
+            
+            // Load dashboard data
+            loadDashboardData();
         });
-
-        function checkAuth() {
-            const user = localStorage.getItem('greenglo_admin_user');
-            const token = localStorage.getItem('greenglo_admin_token');
-            
-            if (user && token) {
-                // User is logged in
-                currentUser = JSON.parse(user);
-                showAdminDashboard();
-                loadDashboardData();
-            } else {
-                // Show login screen
-                showLoginScreen();
-            }
-        }
-
-        function showLoginScreen() {
-            elements.loginScreen.style.display = 'flex';
-            elements.adminDashboard.style.display = 'none';
-        }
-
-        function showAdminDashboard() {
-            elements.loginScreen.style.display = 'none';
-            elements.adminDashboard.style.display = 'block';
-            
-            // Update user info
-            if (currentUser) {
-                document.getElementById('userName').textContent = currentUser.name;
-                document.getElementById('userInitial').textContent = currentUser.name.charAt(0).toUpperCase();
-            }
-        }
 
         function updateDate() {
             const now = new Date();
@@ -1247,12 +1036,6 @@
         }
 
         function setupEventListeners() {
-            // Login form
-            elements.loginForm.addEventListener('submit', handleLogin);
-            
-            // Logout button
-            elements.logoutBtn.addEventListener('click', handleLogout);
-            
             // Mobile menu toggle
             elements.mobileMenuToggle.addEventListener('click', function() {
                 elements.sidebar.classList.toggle('active');
@@ -1302,48 +1085,6 @@
                     }
                 }
             });
-        }
-
-        async function handleLogin(e) {
-            e.preventDefault();
-            
-            const username = document.getElementById('username').value.trim();
-            const password = document.getElementById('password').value.trim();
-            
-            // Simple authentication (in production, use Supabase auth)
-            if (username === 'admin' && password === 'admin123') {
-                // Success
-                currentUser = {
-                    id: 1,
-                    name: 'Administrator',
-                    email: 'admin@greenglo.com',
-                    role: 'admin'
-                };
-                
-                // Store auth data
-                localStorage.setItem('greenglo_admin_user', JSON.stringify(currentUser));
-                localStorage.setItem('greenglo_admin_token', 'demo_token_' + Date.now());
-                
-                // Show admin dashboard
-                showAdminDashboard();
-                showToast('Login successful! Welcome to GreenGlo Admin.', 'success');
-                
-                // Clear form
-                elements.loginForm.reset();
-                
-            } else {
-                showToast('Invalid credentials. Please try again.', 'error');
-            }
-        }
-
-        function handleLogout() {
-            // Clear auth data
-            localStorage.removeItem('greenglo_admin_user');
-            localStorage.removeItem('greenglo_admin_token');
-            
-            // Show login screen
-            showLoginScreen();
-            showToast('Logged out successfully.', 'success');
         }
 
         function switchSection(section) {
@@ -2023,8 +1764,9 @@
 
         function deleteBooking(id) {
             if (confirm(`Are you sure you want to delete booking ${id}?`)) {
-                showToast(`Booking ${id} deleted (demo)`, 'success');
                 // In real implementation, call Supabase delete here
+                showToast(`Booking ${id} deleted (demo)`, 'success');
+                refreshCurrentSection();
             }
         }
 
